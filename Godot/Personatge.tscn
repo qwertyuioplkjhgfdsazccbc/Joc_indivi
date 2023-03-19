@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Personatge.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 31.5 )
+
+[node name="Personatge" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -1, -1 )
+rotating = true
+current = true
+zoom = Vector2( 0.4, 0.4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1 )
+scale = Vector2( 0.25, 0.25 )
+shape = SubResource( 1 )
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 0, -1 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
